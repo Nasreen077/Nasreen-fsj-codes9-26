@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Email Address Validation</h2>
+
+    <input type="text" id="email" placeholder="Enter your email">
+
+    <button onclick="validateEmail()">Validate</button>
+
+    <p id="message"></p>
+
+    <script>
+        function validateEmail() {
+
+            let email = document.getElementById("email").value;
+
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            let message = document.getElementById("message");
+
+            if (pattern.test(email)) {
+                message.innerHTML = "Valid Email Address";
+                message.style.color = "green";
+            }
+            else {
+                message.innerHTML = "Invalid Email Address";
+                message.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
